@@ -119,6 +119,15 @@ export function getBlockName(clientId: string): string | null;
 export function getBlockOrder(rootClientId?: string): string[];
 
 /**
+ * Given a block client ID, returns the list of all its parents from top to bottom.
+ *
+ * @param   clientId  Block from which to find root client ID.
+ * @param   ascending Order results from bottom to top (true) or top to bottom (false).
+ * @returns Client iDs of parent blocks.
+ */
+export function getBlockParents(clientId: string, ascending?: boolean): Array<string>;
+
+/**
  * Given a block client ID, returns the root block from which the block is nested, an empty string
  * for top-level blocks, or `null` if the block does not exist.
  *
